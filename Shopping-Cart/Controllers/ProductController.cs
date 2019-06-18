@@ -53,14 +53,48 @@ namespace Shopping_Cart.Controllers
                 var result = (from product in db.Products where product.Id == id select product).FirstOrDefault();
                 if( result != default( Models.Product))
                 {
-
+                    return View(result);
+                }
+                else
+                {
+                    TempData["ResultMessage"] = "資料有誤，請重新操作";
+                    return RedirectToAction("Index");
                 }
 
             }
-            return View();
+            
         }
-        
-         
 
+        [HttpPost]
+        public ActionResult Edit(Models.Product postback)
+        {
+            if (this.ModelState.IsValid)
+            {
+                using (Models.ShoppingCartEntities db = new Models.ShoppingCartEntities())
+                {
+                    var result = (from product in db.Products where product.Id == postback.Id select product).FirstOrDefault();
+
+                    result.Name = postback.Name;
+                    result.Price = postback.Price;
+                    result.PublishDate = postback.PublishDate;
+                    result.PriceDiscount = postback.PriceDiscount;
+                    result.Quantity = postback.Quantity;
+                    result.StatusSale = postback.StatusSale;
+                    result.StatusShow = postback.StatusShow;
+                    result.CategoryId = postback.CategoryId;
+                    result.DefaultImageId = postback.DefaultImageId;
+                    result.Description = postback.Description;
+
+                    db.SaveChanges();
+
+                    TempData["ResultMessage"] = String.Format("商品[{0}]成功編輯", postback.Name);
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return View(postback);
+            }
+        }
     }
 }
