@@ -97,6 +97,7 @@ namespace Shopping_Cart.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             using (Models.ShoppingCartEntities db = new Models.ShoppingCartEntities())

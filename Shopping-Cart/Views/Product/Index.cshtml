@@ -82,9 +82,17 @@
             @Html.DisplayFor(modelItem => item.PriceDiscount)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default" })
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default" })
+        </td>
+        <td>
+            @using (@Html.BeginForm("Delete", "Delete", FormMethod.Post, new { @class = "Delete" }))
+            {
+                @Html.Hidden("id", item.Id)
+                <input type="submit" value="刪除" class="btn btn-default" />
+            }
         </td>
     </tr>
 }
