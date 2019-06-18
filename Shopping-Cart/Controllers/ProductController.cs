@@ -96,5 +96,28 @@ namespace Shopping_Cart.Controllers
                 return View(postback);
             }
         }
+
+        public ActionResult Delete(int id)
+        {
+            using (Models.ShoppingCartEntities db = new Models.ShoppingCartEntities())
+            {
+                var result = (from product in db.Products where product.Id == id select product).FirstOrDefault();
+                if (result != default(Models.Product))
+                {
+                    db.Products.Remove(result);
+
+                    db.SaveChanges();
+
+                    TempData["ResultMessage"] = String.Format("商品[{0}]成功刪除", result.Name);
+                    return RedirectToAction("Index");
+                }
+                else {
+                    TempData["ResultMessage"] = "指定資料不存在，無法刪除，請重新操作";
+                    return RedirectToAction("Index");
+                }
+
+            }
+                return View();
+        }
     }
 }
