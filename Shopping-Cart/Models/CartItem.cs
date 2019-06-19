@@ -37,5 +37,11 @@ namespace Shopping_Cart.Models.Cart
                 return this.Price * this.Quantity;
             }
         }
+
+        public string ImageUrl { get; set; }
+
+        public bool StatusSale { get; set; }
+
+        public int PriceDiscount { get; set; }
     }
 }
