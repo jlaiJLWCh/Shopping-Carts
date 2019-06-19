@@ -195,6 +195,12 @@
     <Compile Include="Models\ManageUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Operation.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>ShoppingCart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>ShoppingCart.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs">
       <DependentUpon>ShoppingCart.tt</DependentUpon>
     </Compile>

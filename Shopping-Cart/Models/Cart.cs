@@ -97,6 +97,23 @@ namespace Shopping_Cart.Models.Cart
             return true;
         }
 
+        //將購物車商品轉成OrderDetail的List
+        public List<Models.OrderDetail> ToOrderDetailList(int orderId)
+        {
+            var result = new List<Models.OrderDetail>();
+            foreach (var cartItem in this.cartItems)
+            {
+                result.Add(new Models.OrderDetail()
+                {
+                    Name = cartItem.Name,
+                    Price = cartItem.Price,
+                    Quantity = cartItem.Quantity,
+                    OrderId = orderId
+                });
+            }
+            return result;
+        }
+
         //透過cartItems實作介面
         public IEnumerator<CartItem> GetEnumerator()
         {
