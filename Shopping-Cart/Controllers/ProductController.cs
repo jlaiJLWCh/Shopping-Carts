@@ -84,6 +84,7 @@ namespace Shopping_Cart.Controllers
                     result.CategoryId = postback.CategoryId;
                     result.DefaultImageId = postback.DefaultImageId;
                     result.Description = postback.Description;
+                    result.ImageUrl = postback.ImageUrl;
 
                     db.SaveChanges();
 
@@ -118,7 +119,6 @@ namespace Shopping_Cart.Controllers
                 }
 
             }
-                return View();
         }
     }
 }

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5396c50a7f024525bbfb433c1c396cca" Name="Diagram1" >
-        <EntityTypeShape EntityType="ShoppingCartModel.Product" Width="1.5" PointX="2.5" PointY="1.125" />
+        <EntityTypeShape EntityType="ShoppingCartModel.Product" Width="1.5" PointX="2" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/18/2019 15:58:49
+-- Date Created: 06/19/2019 15:13:30
 -- Generated from EDMX file: C:\Users\John\source\repos\Shopping-Cart\Shopping-Cart\Models\ShoppingCart.edmx
 -- --------------------------------------------------
 
@@ -42,7 +42,8 @@ CREATE TABLE [dbo].[Products] (
     [DefaultImageId] nvarchar(max)  NOT NULL,
     [Quantity] int  NOT NULL,
     [StatusSale] bit  NOT NULL,
-    [PriceDiscount] decimal(18,0)  NOT NULL
+    [PriceDiscount] decimal(18,0)  NOT NULL,
+    [ImageUrl] nvarchar(max)  NULL
 );
 GO
 

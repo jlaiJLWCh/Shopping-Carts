@@ -10,7 +10,11 @@ namespace Shopping_Cart.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using(Models.ShoppingCartEntities db = new Models.ShoppingCartEntities())
+            {
+                var result = (from s in db.Products select s).ToList();
+                return View(result);
+            }
         }
 
         public ActionResult About()

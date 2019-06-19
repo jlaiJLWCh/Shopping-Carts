@@ -25,5 +25,6 @@ namespace Shopping_Cart.Models
         public int Quantity { get; set; }
         public bool StatusSale { get; set; }
         public decimal PriceDiscount { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
