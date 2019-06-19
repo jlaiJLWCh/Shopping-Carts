@@ -25,6 +25,9 @@
                     <li>@Html.ActionLink("首頁", "Index", "Home")</li>
                     <li>@Html.ActionLink("關於", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("商品管理", "Index", "Product")</li>
+                    <li>@Html.ActionLink("會員管理", "Index", "ManageUser")</li>
+                    <li id="Cart">@Html.Partial("_CartPartial")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
