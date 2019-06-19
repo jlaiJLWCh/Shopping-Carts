@@ -187,9 +187,12 @@
     <Compile Include="Models\AspNetUser.cs">
       <DependentUpon>User.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>ShoppingCart.tt</DependentUpon>
     </Compile>

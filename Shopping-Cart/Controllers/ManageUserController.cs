@@ -41,6 +41,7 @@ namespace Shopping_Cart.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Edit(Models.ManageUser postback)
         {
             using (Models.UserEntities db = new Models.UserEntities())
