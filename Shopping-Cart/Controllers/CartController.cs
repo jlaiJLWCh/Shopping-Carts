@@ -23,7 +23,24 @@ namespace Shopping_Cart.Controllers
         {
             var currentCart = Models.Cart.Operation.GetCurrentCart();
             currentCart.AddProduct(id);
+
             return PartialView("_CartPartial");
         }
+
+        public ActionResult RemoveFromCart(int id)
+        {
+            var currentCart = Models.Cart.Operation.GetCurrentCart();
+            currentCart.RemoveProduct(id);
+            return PartialView("_CartPartial");
+        }
+
+        public ActionResult ClearCart()
+        {
+            var currentCart = Models.Cart.Operation.GetCurrentCart();
+            currentCart.ClearCart();
+            return PartialView("_CartPartial");
+        }
+
     }
+
 }

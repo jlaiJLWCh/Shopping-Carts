@@ -10,12 +10,16 @@
     {
         foreach (var cartitem in currentCart)
         {
-            <li>
-                <a>@cartitem.Name <span>@cartitem.Price 元 X @cartitem.Quantity</span></a>
+            <li class="col-sm-12">
+                <span class="col-sm-9">@cartitem.Name @cartitem.Price 元 X @cartitem.Quantity</span>
+                <span class="btn btn-danger col-sm-3" onclick="RemoveFromCart('@cartitem.Id')">X</span>
             </li>
 
             <li class="divider"></li>
-            <li><a class="btn btn-default text-center" href="#">結帳去</a> </li>
+            <li>
+                <a class="btn btn-default text-center col-xs-5" href="#">結帳去</a>
+                <a class="btn btn-default text-center col-xs-5" href="#" onclick="ClearCart()">清空</a>
+            </li>
         }
     }
     else

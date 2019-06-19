@@ -74,6 +74,29 @@ namespace Shopping_Cart.Models.Cart
             return true;
         }
 
+        public bool RemoveProduct(int ProductId)
+        {
+            var findItem = this.cartItems.Where(s => s.Id == ProductId).Select(s => s).FirstOrDefault();
+
+            if (findItem == default(Models.Cart.CartItem))
+            {
+                
+            }
+            else
+            {
+                this.cartItems.Remove(findItem);
+            }
+
+            return true;
+        }
+
+        public bool ClearCart()
+        {
+            this.cartItems.Clear();
+
+            return true;
+        }
+
         //透過cartItems實作介面
         public IEnumerator<CartItem> GetEnumerator()
         {
